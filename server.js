@@ -38,7 +38,7 @@ app.use(express.urlencoded({ extended: false }));
 // new
 
 app.get("/new", (req, res) => {
-  res.render("/New");
+  res.render("New");
 });
 
 // ========== PORT ========== \\
