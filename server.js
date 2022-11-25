@@ -36,6 +36,10 @@ app.use(express.urlencoded({ extended: false }));
 
 // ========== ROUTES ========== \\
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the Captain's Log Entry List");
+});
+
 // * === Index
 
 app.get("/logs", (req, res) => {
@@ -54,6 +58,13 @@ app.get("/logs", (req, res) => {
 
 app.get("/new", (req, res) => {
   res.render("New");
+});
+
+// * Delete
+app.delete("/:id", (req, res) => {
+  Logs.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect("/logs");
+  });
 });
 
 // * === Create
