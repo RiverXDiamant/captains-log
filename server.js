@@ -61,9 +61,23 @@ app.get("/new", (req, res) => {
 });
 
 // * Delete
+
 app.delete("/:id", (req, res) => {
   Logs.findByIdAndRemove(req.params.id, (err, data) => {
     res.redirect("/logs");
+  });
+});
+
+// * === Update
+
+app.put("/:id", (req, res) => {
+  req.body.shipIsBroken = req.body.shipIsBroken === "on" ? true : false;
+  Logs.findByIdAndUpdate(req.body.params.id, req.body, (err, updatedLogs) => {
+    if (!err) {
+      res.status(200).redirect(`/logs/${req.params.id}`);
+    } else {
+      res.status(400).send(err);
+    }
   });
 });
 
