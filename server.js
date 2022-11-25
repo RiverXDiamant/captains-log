@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const PORT = 3000;
+const CaptainsLog = require("./models/logs");
 const reactViews = require("express-react-views");
 
 // require Mongoose
@@ -35,10 +36,29 @@ app.use(express.urlencoded({ extended: false }));
 
 // ========== ROUTES ========== \\
 
-// new
+// New
 
 app.get("/new", (req, res) => {
   res.render("New");
+});
+
+// Create
+app.post("/logs", (req, res) => {
+  if (req.body.shipIsBroken === "on") {
+    req.body.shipIsBroken = true;
+  } else {
+    req.body.shipIsBroken = false;
+  }
+  CaptainsLog.create(req.body, (error, createdCaptainsLog) => {
+    if (!error) {
+      console.log(createdCaptainsLog);
+      res.status(200).redirect("/logs");
+    } else {
+      res.status(400).send(error);
+    }
+  });
+  //   res.send(req.body);
+  console.log(req.body);
 });
 
 // ========== PORT ========== \\
