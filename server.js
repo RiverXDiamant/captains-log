@@ -87,6 +87,19 @@ app.post("/logs", (req, res) => {
   console.log(req.body);
 });
 
+// * === Edit
+app.get("/:id/edit", (req, res) => {
+  Logs.findById(req.params.id, (err, foundLogs) => {
+    if (!err) {
+      res.render("Edit", {
+        logs: foundLogs,
+      });
+    } else {
+      res.send({ msg: err.message });
+    }
+  });
+});
+
 // * === Show
 
 app.get("/show", (req, res) => {
