@@ -2,13 +2,13 @@ const React = require("react")
 
 class Show extends React.Component {
     render () {
-        const { logs} = this.props
+        const { title, entry, shipIsBroken, timestamps} = this.props
         return (
             <div>
                
-                <title>Captains Log Show Page</title>
+                <title>Captain's Log</title>
 
-                <h1> The {`${logs.title}`} Captain's Log</h1>
+                <h1> The {title} Captain's Log</h1>
                 <p>Log Entry: {entry}</p>
                 <p>Ship Is Broken: {shipIsBroken}</p>
                 <p>Date Created: {timestamps}</p>
@@ -18,7 +18,7 @@ class Show extends React.Component {
                 </nav>
 
             </div>
-        )
+        );
     }
 }
 

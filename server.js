@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 const Logs = require("./models/logs");
+const logsController = require("./controllers/logsController");
 const reactViews = require("express-react-views");
 
 // require Mongoose
@@ -36,9 +37,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // ========== ROUTES ========== \\
 
-app.get("/", (req, res) => {
-  res.send("Welcome to the Captain's Log Entry List");
-});
+app.use("/logs", logsController);
 
 // ========== PORT ========== \\
 

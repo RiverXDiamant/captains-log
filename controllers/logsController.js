@@ -55,9 +55,9 @@ router.post("/", (req, res) => {
   } else {
     req.body.shipIsBroken = false;
   }
-  Logs.create(req.body, (error, createdLog) => {
+  Logs.create(req.body, (error, createdLogs) => {
     if (!error) {
-      console.log(createdLog);
+      console.log(createdLogs);
       res.status(200).redirect("/logs");
     } else {
       res.status(400).send(error);
@@ -93,3 +93,5 @@ router.get("/:id", (req, res) => {
     }
   });
 });
+
+module.exports = router;
