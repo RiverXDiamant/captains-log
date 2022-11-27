@@ -11,17 +11,18 @@ class New extends React.Component {
                 <h1>Create New Captain's Log</h1>
                 <br />
                 <form action="/logs" method="POST">
-                    Title: <input type="text" name="title"  /><br />
+                    title: <input type="text" name="title"/><br />
                     <br />
-                    Entry: <input type="textarea" name="entry" /><br />
+                    entry: <textarea name="entry" cols="30" rows="10"></textarea><br />
                     <br />
-                    Ship Is Broken: <input type="checkbox" name="shipIsBroken"/><br />
+                    Ship Is Broken:
+                     <input type="checkbox" name="shipIsBroken"/> <br />
                     <br />
-                    <input type="submit" name="" value="Create Captain's Log"/>
+                    <input type="submit" value="Create Log" />
                 </form>
             </div>
         )
     }
 }
 
-module.exports = New
+module.exports = New;
