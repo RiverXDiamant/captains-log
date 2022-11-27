@@ -11,15 +11,15 @@ class New extends React.Component {
                 <h1>Create New Log</h1>
                 <br />
                 <form action="/logs" method="POST">
-                    title: <input type="text" name="title"/><br />
+                    <strong>Title:</strong> <input type="text" name="title"/><br />
                     <br />
-                    entry: <br /> 
+                   <strong>Entry:</strong> <br /> 
                     <textarea name="entry" cols="30" rows="10"></textarea><br />
                     <br />
-                    Ship Is Broken:
+                    <strong>Ship Status:</strong>
                      <input type="checkbox" name="shipIsBroken"/> <br />
                     <br />
-                    <input type="submit" value="Create Log" />
+                    <input type="submit" value="Create New Log" />
                 </form>
             </div>
         )

@@ -10,7 +10,7 @@ class Show extends React.Component {
 
                 <h1> {title} </h1>
                 <p><strong>Log Entry:</strong> {entry}</p>
-                <p><strong>Ship Status:</strong> {shipIsBroken ? "Ship is not functioning properly. Needs maintenance." : " Ship is functioning properly ✔️" }</p>
+                <p><strong>Ship Status:</strong> {shipIsBroken ? "Ship is not functioning properly. Needs maintenance. 🛠️" : " Ship is functioning properly ✔️" }</p>
                 <p>Date Created: {timestamps}</p>
                 <br />
                 <nav>

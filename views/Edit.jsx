@@ -5,7 +5,7 @@ class Edit extends React.Component {
         return(
             <div>
                 <title>Edit Captain's Log</title>
-                <form action={`/logs/${this.props.log._id}?_method=PUT`} method="POST">
+                <form action={`/logs/${this.props.logs._id}?_method=PUT`} method="POST">
                     title: <input type="text" name="title" /><br />
                     <br />
                     entry: <textarea name="entry" cols="30" rows="10"></textarea><br />

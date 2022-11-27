@@ -54,7 +54,7 @@ router.post("/", (req, res) => {
   Log.create(req.body, (error, createdLog) => {
     if (!error) {
       console.log(createdLog);
-      res.status(200).redirect(`/logs/${createdLog._id.valueOf()}`);
+      res.status(200).redirect("/logs");
     } else {
       res.status(400).send(error);
     }
