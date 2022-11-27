@@ -6,11 +6,11 @@ class Show extends React.Component {
         return (
             <div>
                
-                <title>Captain's Log</title>
+                <title>TARDIS Log</title>
 
-                <h1> The {title} Captain's Log</h1>
-                <p>Log Entry: {entry}</p>
-                <p>Ship Is Broken: {shipIsBroken}</p>
+                <h1> {title} </h1>
+                <p><strong>Log Entry:</strong> {entry}</p>
+                <p><strong>Ship Status:</strong> {shipIsBroken ? "Ship is not functioning properly. Needs maintenance." : " Ship is functioning properly ✔️" }</p>
                 <p>Date Created: {timestamps}</p>
                 <br />
                 <nav>

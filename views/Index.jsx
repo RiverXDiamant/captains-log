@@ -6,10 +6,10 @@ class Index extends React.Component {
         return (
             <div>
     
-                <title>Index Page</title>
-                <h1>Captain's Log Index</h1>
+                <title>Captain's Log Index Page</title>
+                <h1>TARDIS Log Index</h1>
                 <nav>
-                    <a href="/logs/new">Create Captain's Log</a>
+                    <a href="/logs/new">Create New Log</a>
                 </nav> 
                 <ul>
                     {
