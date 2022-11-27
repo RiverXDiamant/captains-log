@@ -4,19 +4,19 @@ class Edit extends React.Component {
     render() {
         return(
          
-                <form action={`/fruits/${this.props.logs._id}?_method=PUT`} method="POST">
-                    title: <input type="text" name="name" defaultValue={this.props.logs.title} /><br />
+                <form action={`/logs/${this.props.log._id}?_method=PUT`} method="POST">
+                    title: <input type="text" name="name" defaultValue={this.props.log.title} /><br />
                     <br />
-                    entry: <input type="text" name="color" defaultValue={this.props.logs.entry} /><br />
+                    entry: <textarea name="entry" cols="30" rows="10"></textarea><br />
                     <br />
                     Ship Is Broken:
-                    { this.props.logs.shipIsBroken? <input type="checkbox" name="shipIsBroken" defaultChecked />: <input type="checkbox" name="shipIsBroken"/> }<br />
+                    { this.props.log.shipIsBroken? <input type="checkbox" name="shipIsBroken" defaultChecked />: <input type="checkbox" name="shipIsBroken"/> }<br />
                     <br />
-                    <input type="submit" value={`Edit ${this.props.logs.title}`} />
+                    <input type="submit" value={`Edit ${this.props.log.title}`} />
                 </form>
           
         )
     }
 }
 
-module.exports = Edit
+module.exports = Edit;

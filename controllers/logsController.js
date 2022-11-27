@@ -1,15 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const Logs = require("../models/logs");
+const Log = require("../models/logs");
 
 // ================================================
-//                      ROUTES
+// !                     ROUTES
 // ================================================
 
 // * === Index
 
 router.get("/", (req, res) => {
-  Logs.find({}, (error, allLogs) => {
+  Log.find({}, (error, allLogs) => {
     if (!error) {
       res.status(200).render("Index", {
         logs: allLogs,
@@ -29,7 +29,7 @@ router.get("/new", (req, res) => {
 // * Delete
 
 router.delete("/:id", (req, res) => {
-  Logs.findByIdAndRemove(req.params.id, (err, data) => {
+  Log.findByIdAndRemove(req.params.id, (err, data) => {
     res.redirect("/logs");
   });
 });
@@ -38,7 +38,7 @@ router.delete("/:id", (req, res) => {
 
 router.put("/:id", (req, res) => {
   req.body.shipIsBroken = req.body.shipIsBroken === "on" ? true : false;
-  Logs.findByIdAndUpdate(req.body.params.id, req.body, (err, updatedLogs) => {
+  Log.findByIdAndUpdate(req.body.params.id, req.body, (err, updatedLogs) => {
     if (!err) {
       res.status(200).redirect(`/logs/${req.params.id}`);
     } else {
@@ -50,15 +50,11 @@ router.put("/:id", (req, res) => {
 // * === Create
 
 router.post("/", (req, res) => {
-  if (req.body.shipIsBroken === "on") {
-    req.body.shipIsBroken = true;
-  } else {
-    req.body.shipIsBroken = false;
-  }
-  Logs.create(req.body, (error, createdLogs) => {
+  req.body.shipIsBroken = req.body.shipIsBroken === "on" ? true : false;
+  Log.create(req.body, (error, createdLog) => {
     if (!error) {
-      console.log(createdLogs);
-      res.status(200).redirect("/logs");
+      console.log(createdLog);
+      res.status(200).redirect(`/logs/${createdLog._id.valueOf()}`);
     } else {
       res.status(400).send(error);
     }
@@ -69,10 +65,10 @@ router.post("/", (req, res) => {
 
 // * === Edit
 router.get("/:id/edit", (req, res) => {
-  Logs.findById(req.params.id, (err, foundLogs) => {
+  Log.findById(req.params.id, (err, foundLog) => {
     if (!err) {
       res.render("Edit", {
-        logs: foundLogs,
+        log: foundLog,
       });
     } else {
       res.send({ msg: err.message });
@@ -83,10 +79,10 @@ router.get("/:id/edit", (req, res) => {
 // * === Show
 
 router.get("/:id", (req, res) => {
-  Logs.findById(req.params.id, (error, foundLogs) => {
+  Log.findById(req.params.id, (error, foundLog) => {
     if (!error) {
       res.status(200).render("Show", {
-        logs: foundLogs,
+        log: foundLog,
       });
     } else {
       res.status(400).send(error);

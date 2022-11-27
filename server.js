@@ -2,10 +2,11 @@ require("dotenv").config();
 
 const express = require("express");
 const app = express();
+const Log = require("./models/logs");
 const PORT = 3000;
-const Logs = require("./models/logs");
 const logsController = require("./controllers/logsController");
 const reactViews = require("express-react-views");
+const methodOverride = require("method-override");
 
 // require Mongoose
 const mongoose = require("mongoose");
@@ -34,6 +35,7 @@ app.use((req, res, next) => {
 // express.urlencoded is a built-in middleware function in Express.
 // It parses incoming requests with urlencoded payloads and is based on body-parser.
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
 
 // ========== ROUTES ========== \\
 
