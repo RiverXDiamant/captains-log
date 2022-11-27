@@ -9,7 +9,7 @@ class Index extends React.Component {
                 <title>Index Page</title>
                 <h1>Captain's Log Index</h1>
                 <nav>
-                    <a href="/new">Create Captain's Log</a>
+                    <a href="/logs/new">Create Captain's Log</a>
                 </nav> 
                 <ul>
                     {

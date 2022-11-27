@@ -2,7 +2,7 @@ const React = require("react")
 
 class Show extends React.Component {
     render () {
-        const { title, entry, shipIsBroken, timestamps} = this.props
+        const { title, entry, shipIsBroken, timestamps} = this.props.log
         return (
             <div>
                
