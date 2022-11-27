@@ -13,7 +13,7 @@ const logSchema = new Schema(
   }
 );
 
-// Log Model
+// == Log Model
 const Log = model("Log", logSchema);
 
 module.exports = Log;
