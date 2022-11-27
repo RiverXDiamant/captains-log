@@ -25,4 +25,5 @@ class New extends React.Component {
     }
 }
 
+// export module
 module.exports = New;

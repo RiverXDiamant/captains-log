@@ -37,4 +37,5 @@ class Index extends React.Component {
     }
 }
 
+// export module
 module.exports = Index;

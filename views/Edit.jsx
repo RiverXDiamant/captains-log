@@ -19,4 +19,5 @@ class Edit extends React.Component {
     }
 }
 
+// module export
 module.exports = Edit;

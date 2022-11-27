@@ -22,4 +22,5 @@ class Show extends React.Component {
     }
 }
 
+// export module
 module.exports = Show; 
