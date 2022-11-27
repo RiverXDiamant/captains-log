@@ -3,9 +3,9 @@ const React = require("react")
 class Edit extends React.Component {
     render() {
         return(
-         
+            <div>
                 <form action={`/logs/${this.props.log._id}?_method=PUT`} method="POST">
-                    title: <input type="text" name="name" defaultValue={this.props.log.title} /><br />
+                    title: <input type="text" name="title" defaultValue={this.props.log.title} /><br />
                     <br />
                     entry: <textarea name="entry" cols="30" rows="10"></textarea><br />
                     <br />
@@ -14,7 +14,7 @@ class Edit extends React.Component {
                     <br />
                     <input type="submit" value={`Edit ${this.props.log.title}`} />
                 </form>
-          
+           </div>
         )
     }
 }
