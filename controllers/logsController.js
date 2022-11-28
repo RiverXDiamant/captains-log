@@ -38,7 +38,7 @@ router.delete("/:id", (req, res) => {
 
 router.put("/:id", (req, res) => {
   req.body.shipIsBroken = req.body.shipIsBroken === "on" ? true : false;
-  Log.findByIdAndUpdate(req.body.params.id, req.body, (err, updatedLogs) => {
+  Log.findByIdAndUpdate(req.params.id, req.body, (err, updatedLogs) => {
     if (!err) {
       res.status(200).redirect(`/logs/${req.params.id}`);
     } else {
