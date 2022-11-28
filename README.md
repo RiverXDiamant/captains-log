@@ -41,14 +41,21 @@ Let's keep track of our Restful Routes as we build out our app. Copy/paste this 
 Index, New and Create has been completed for you.
 
 Restful Routes
-# 	Action 	URL 	HTTP Verb 	jsx view filename 	mongoose method
+# 	Action |	URL |	HTTP Verb 	jsx |view filename |	mongoose method
 1 	Index 	/logs/ 	GET 	Index.jsx 	Log.find()
-2 	Show 				
+<br />
+2 	Show 
+<br />
 3 	New 	/logs/new 	GET 	New.jsx 	none
+<br />
 4 	Create 	/logs/ 	POS T 	none 	Log.create(req.body)
-5 	Edit 				
-6 	Update 				
-7 	Destroy 				
+<br />
+5 	Edit 	
+<br />
+6 	Update 	
+<br />
+7 	Destroy 	
+<br />
 
     In your student_labs folder
     mkdir captains_log
