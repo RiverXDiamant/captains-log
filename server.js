@@ -36,6 +36,7 @@ app.use((req, res, next) => {
 // It parses incoming requests with urlencoded payloads and is based on body-parser.
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
+app.use(express.static("public"));
 
 // ========== ROUTES ========== \\
 

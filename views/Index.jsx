@@ -1,13 +1,14 @@
 const React = require("react")
+const DefaultLayout = require("./layout/Default")
 
 class Index extends React.Component {
     render() {
         const { logs } = this.props
         return (
-            <div>
+            <DefaultLayout title="TARDIS Log Index">
     
-                <title>Captain's Log Index Page</title>
-                <h1>TARDIS Log Index</h1>
+                
+             
                 <nav>
                     <a href="/logs/new">Create New Log</a>
                 </nav> 
@@ -32,7 +33,7 @@ class Index extends React.Component {
                         })
                     }
                 </ul>
-            </div>
+            </DefaultLayout>
         )
     }
 }
