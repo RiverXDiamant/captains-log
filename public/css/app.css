@@ -2,10 +2,9 @@
 
 body {
   background: url(https://articulate-heroes.s3.amazonaws.com/uploads/rte/bvpafzox_SpiralNotebook_Center.png);
-  background-repeat: repeat-x;
+  background-position: center;
   margin: 0;
   font-family: "Comfortaa", cursive;
-  text-align: center;
 }
 
 h1 {
@@ -21,12 +20,11 @@ a {
   color: rgb(10, 53, 247);
   text-decoration: none;
   text-shadow: 1px 1px 1px rgb(255, 255, 255);
-  font-size: 1.5em;
-  background: rgba(235, 226, 187, 0.9);
+  font-size: 1.25em;
 }
 
 a:hover {
-  color: ghostwhite;
+  color: rgb(8, 8, 230);
 }
 
 li {
@@ -34,7 +32,7 @@ li {
 }
 
 li a {
-  color: mediumseagreen;
+  color: rgb(0, 0, 0);
 }
 
 input[type="text"] {
@@ -43,7 +41,7 @@ input[type="text"] {
 
 input[type="submit"] {
   padding: 0.3em;
-  color: rgb(255, 254, 253);
+  color: rgb(184, 99, 14);
   background: rgb(23, 1, 214);
   font-size: 1em;
   border-radius: 10%;
