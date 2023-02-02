@@ -48,7 +48,7 @@ Restful Routes
 <br />
 3 	New 	/logs/new 	GET 	New.jsx 	none
 <br />
-4 	Create 	/logs/ 	POS T 	none 	Log.create(req.body)
+4 	Create 	/logs/ 	POST 	none 	Log.create(req.body)
 <br />
 5 	Edit 	
 <br />
@@ -59,12 +59,12 @@ Restful Routes
 
     In your student_labs folder
     mkdir captains_log
-    cd catpains_log
+    cd captains_log
     create a new express app
     
 New
 
-    create a newroute in your server.js - be sure to follow the Restful convention
+    create a new route in your server.js - be sure to follow the Restful convention
     just have it res.send('new') as the response for now
     make a views directory
     install express-react-views react react-dom
@@ -89,7 +89,7 @@ Create
     upgrade your data
     change the input of your checkbox to be true/false rather than on
     now when you check your res.send(req.body) you should see true/false rather than 'on/off' - the rest of your data should stay the same
-    don't forget to git add and git commityour work, give yourself an informative commit message so you can trace back your work, if you need to
+    don't forget to git add and git commit your work, give yourself an informative commit message so you can trace back your work, if you need to
 
 Mongo
 
@@ -176,9 +176,9 @@ Router
     touch controllers/logs.js
     work on refactoring your code so your logs routes are in your controller file, rather than in server.js
 
-Bonuses
+Bonus
 
-    The captain wants to keep track of eating habits: make a new set of routes in a new file in your controller folder called foodlogs
+    The captain wants to keep track of eating habits: make a new set of routes in a new file in your controller folder called food logs
     build out the 7 restful routes for food logs, include a new model with whatever properties make sense
     make a seed file and seed it
     have your update route redirect to the show page of the log that was edited
